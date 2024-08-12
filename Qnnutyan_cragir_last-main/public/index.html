@@ -1,0 +1,113 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Checker</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/theme/monokai.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/mode/javascript/javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/mode/python/python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/mode/clike/clike.min.js"></script>
+</head>
+<body>
+  <label for="language">Ընտրեք լեզուն որով գրելու եք կոդը</label>
+  <select id="language" onchange="changeLanguage()">
+    <option value="javascript">JavaScript</option>
+    <option value="python">Python</option>
+    <option value="csharp">C#</option>
+    <option value="java">Java</option>
+    <option value="cpp">C++</option>
+  </select>
+  <br>
+  <h1>Գրեք խնդիրը և սպասվող պատասխանը</h1>
+  <textarea id="task" placeholder="Գրեք խնդիրը այստեղ..."></textarea>
+  <input id="expectedResult" placeholder="Գրեք սպասվող պատասխանը այստեղ"></input>
+  <h1>Գրեք ձեր լուծումը</h1>
+  <textarea id="solution" placeholder="Գրեք ձեր լուծումը..."></textarea>
+  <button onclick="submitSolution()">Ստուգել պատասխանը</button>
+  <div id="result"></div>
+  <div id="logOutput"></div>
+  <script src="script_main.js"></script>
+</body>
+</html>  -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Checker</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/theme/monokai.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/addon/hint/show-hint.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/mode/javascript/javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/mode/python/python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/mode/clike/clike.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/addon/hint/show-hint.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/addon/hint/javascript-hint.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/addon/hint/python-hint.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/addon/hint/css-hint.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/addon/hint/xml-hint.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <aside>
+      <h2>Թեմաներ</h2>
+      <ul id="themes"></ul>
+    </aside>
+    <main>
+      <header>
+        <h1>Task Checker</h1>
+        <label for="language">Ընտրեք լեզուն:</label>
+        <select id="language" onchange="changeLanguage()">
+          <option value="javascript">JavaScript</option>
+          <option value="python">Python</option>
+          <option value="csharp">C#</option>
+          <option value="java">Java</option>
+          <option value="cpp">C++</option>
+        </select>
+      </header>
+      <section>
+        <h2>Գրեք խնդիրը և սպասվող պատասխանը:</h2>
+        <textarea id="taskDescription"  readonly></textarea>
+        <textarea id="expectedResult"  readonly></textarea>
+        <section id="choice" style="display: none;">
+          <h2>Ընտրեք ճիշտ պատասխանը:</h2>
+          
+            
+          <div id="choices"> 
+            
+          </div>
+
+           
+          
+          <button onclick="checkAnswer()">Check Answer</button>
+          <div id="answerFeedback"></div>
+        </section>
+        <h2>Գրեք ձեր լուծումը:</h2>
+        <textarea id="solution" placeholder="Գրեք ձեր լուծումը այստեղ..."></textarea>
+        <button onclick="submitSolution()">Check Solution</button>
+      </section>
+      <div class="result-section" id="resultSection">
+        <h2>Result:</h2>
+        <div id="result"></div>
+        <h2>Log Output:</h2>
+        <div id="logOutput"></div>
+      </div>
+      <div class="navigation-buttons">
+        <button id="prevTask" onclick="prevTask()">Previous</button>
+        <button id="nextTask" onclick="nextTask()">Next</button>
+      </div>
+    </main>
+  </div>
+  <script src="script_main.js"></script>
+  <script src="script_task_selection.js"></script>
+</body>
+</html>

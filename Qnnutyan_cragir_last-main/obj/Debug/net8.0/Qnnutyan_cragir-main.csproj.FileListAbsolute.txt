@@ -1,0 +1,14 @@
+C:\Users\Student\Desktop\Qnnutyan_cragir-main\bin\Debug\net8.0\Qnnutyan_cragir-main.exe
+C:\Users\Student\Desktop\Qnnutyan_cragir-main\bin\Debug\net8.0\Qnnutyan_cragir-main.deps.json
+C:\Users\Student\Desktop\Qnnutyan_cragir-main\bin\Debug\net8.0\Qnnutyan_cragir-main.runtimeconfig.json
+C:\Users\Student\Desktop\Qnnutyan_cragir-main\bin\Debug\net8.0\Qnnutyan_cragir-main.dll
+C:\Users\Student\Desktop\Qnnutyan_cragir-main\bin\Debug\net8.0\Qnnutyan_cragir-main.pdb
+C:\Users\Student\Desktop\Qnnutyan_cragir-main\obj\Debug\net8.0\Qnnutyan_cragir-main.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Student\Desktop\Qnnutyan_cragir-main\obj\Debug\net8.0\Qnnutyan_cragir-main.AssemblyInfoInputs.cache
+C:\Users\Student\Desktop\Qnnutyan_cragir-main\obj\Debug\net8.0\Qnnutyan_cragir-main.AssemblyInfo.cs
+C:\Users\Student\Desktop\Qnnutyan_cragir-main\obj\Debug\net8.0\Qnnutyan_cragir-main.csproj.CoreCompileInputs.cache
+C:\Users\Student\Desktop\Qnnutyan_cragir-main\obj\Debug\net8.0\Qnnutyan_cragir-main.dll
+C:\Users\Student\Desktop\Qnnutyan_cragir-main\obj\Debug\net8.0\refint\Qnnutyan_cragir-main.dll
+C:\Users\Student\Desktop\Qnnutyan_cragir-main\obj\Debug\net8.0\Qnnutyan_cragir-main.pdb
+C:\Users\Student\Desktop\Qnnutyan_cragir-main\obj\Debug\net8.0\Qnnutyan_cragir-main.genruntimeconfig.cache
+C:\Users\Student\Desktop\Qnnutyan_cragir-main\obj\Debug\net8.0\ref\Qnnutyan_cragir-main.dll

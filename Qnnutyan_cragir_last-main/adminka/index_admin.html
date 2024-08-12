@@ -1,0 +1,159 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="style_admin.css">
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <h2>Theme Creator (Teacher/Admin)</h2>
+
+        <label for="title" >Theme Title:</label>
+        <input type="text" name="title" id="theme_title">
+        <button id="theme_submit">Create Theme</button>
+    
+      <h2>Task Creator (Teacher/Admin)</h2>
+    
+        <label for="title">Task Title:</label>
+        <input type="text" id="task_title" name="title">
+        <label for="description">Description:</label>
+        <textarea id="description" name="description"></textarea>
+        <label for="solution">Solution:</label>
+        <textarea id="solution" name="solution"></textarea>
+        <button id="task_submit">Create Task</button>
+   
+    </div>
+    <div class="main">
+      <h2>Theme and Task Viewer (Student)</h2>
+      <label for="themeList">Select Theme:</label>
+      <select id="themeList">
+    
+         <option>sss</option>
+      </select>
+      <label for="taskList">Select Task:</label>
+      <select id="taskList">
+
+      </select>
+      <div id="taskDetails">
+     
+      </div>
+    </div>
+  </div>
+  <script src="script_main_admin.js"></script>
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task and Theme Management</title>
+    <link rel="stylesheet" href="style_admin.css">
+</head>
+<body>
+    <h1>Ավելացրեք առաջադրանքներ և թեմաներ</h1>
+
+    <form id="themeForm">
+        <h2>Ավելացնել նոր թեմա</h2>
+        <input type="text" id="themeTitle" placeholder="Թեմայի անուն" required>
+        <button type="submit">Ավելացնել թեմա</button>
+    </form>
+
+    <form id="taskForm">
+        <h2>Ավելացնել նոր առաջադրանք</h2>
+        <select id="themeList" required>
+            <option value="" disabled selected>Ընտրել թեման</option>
+        </select>
+        <input type="text" id="taskTitle" placeholder="Առաջադրանքի անուն" required>
+        <input type="text" id="taskDescription" placeholder="Առաջադրանքի նկարագրություն" required>
+        <input type="text" id="taskSolution" placeholder="Առաջադրանքի լուծում" required>
+        <button type="submit">Ավելացնել առաջադրանք</button>
+    </form>
+
+    <h2>Առաջադրանքներ</h2>
+    <select id="filterThemeList">
+        <option value="" disabled selected>Ընտրեք թեման ֆիլտրելու համար</option>
+    </select>
+    <select id="taskList">
+        <option value="" disabled selected>Ընտրեք առաջադրանք</option>
+    </select>
+
+    <div id="taskDetails"></div>
+
+    <script src="script_main_admin.js"></script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task and Theme Management</title>
+    <link rel="stylesheet" href="style_admin.css">
+</head>
+<body>
+    <h1>Ավելացրեք առաջադրանքներ և թեմաներ</h1>
+
+    <form id="themeForm">
+        <h2>Ավելացնել նոր թեմա</h2>
+        <input type="text" id="themeTitle" placeholder="Թեմայի անուն" required>
+        <button type="submit">Ավելացնել թեմա</button>
+    </form>
+
+    <form id="taskForm">
+        <h2>Ավելացնել նոր առաջադրանք</h2>
+        <select id="themeList" required>
+            <option value="" disabled selected>Ընտրել թեման</option>
+        </select>
+        <input type="text" id="taskTitle" placeholder="Առաջադրանքի անուն" required>
+        <textarea id="taskDescription" placeholder="Առաջադրանքի նկարագրություն" required></textarea>
+        
+        <label for="taskType">Ընտրել առաջադրանքի տիպը:</label>
+        <select id="taskType" required>
+            <option value="" disabled selected>Ընտրել տիպը</option>
+            <option value="code">Գրել կոդ</option>
+            <option value="multiple_choice">Ընտրել ճիշտ պատասխան</option>
+        </select>
+
+        <div id="taskSolutionContainer">
+          <input type="text" id="taskSolution" name="taskSolution" placeholder="Առաջադրանքի լուծում">
+        </div>
+        
+        <div id="multipleChoiceContainer" style="display: none;">
+            <label for="choices">Ավելացնել ընտրանքներ:</label>
+            <div id="choices">
+                <input type="text" class="choice" placeholder="Ընտրանք 1">
+                <input type="text" class="choice" placeholder="Ընտրանք 2">
+            </div>
+            <button type="button" id="addChoice">Ավելացնել ընտրանք</button>
+            <label for="correctChoice">Ընտրել ճիշտ պատասխանը:</label>
+            <select id="correctChoice">
+              <option value="1">Ընտրանք 1</option>
+              <option value="2">Ընտրանք 2</option>
+            </select>
+        </div>
+        
+        <button type="submit">Ավելացնել առաջադրանք</button>
+    </form>
+
+    <h2>Առաջադրանքներ</h2>
+    <select id="filterThemeList">
+        <option value="" disabled selected>Ընտրեք թեման ֆիլտրելու համար</option>
+    </select>
+    <select id="taskList">
+        <option value="" disabled selected>Ընտրեք առաջադրանք</option>
+    </select>
+
+    <div id="taskDetails"></div>
+
+    <script src="script_main_admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Qnnutyan_cragir-main/1.0.0": {
+        "runtime": {
+          "Qnnutyan_cragir-main.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Qnnutyan_cragir-main/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
